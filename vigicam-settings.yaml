@@ -1,0 +1,50 @@
+config:
+  camid: 0
+  description: Android smartphone
+  fps: 15
+  front_cam: 1
+  ip: 192.168.1.17
+  lat: 43.8337
+  lon: 2.3367
+  model_id: galaxy A14 5G
+  mqtt: local
+  org: miraceti
+  rear_cam: 0
+  record: 0
+  rotate: 0
+  sensor: camera
+  size: 640x480
+  title: Mobile samsung
+  topic_base: miraceti/0x70ccbb7a29f151a4
+  topic_subs:
+  - - miraceti/0x70ccbb7a29f151a4/set/#
+    - 0
+  uuid: '0x70ccbb7a29f151a4'
+  vendor: samsung
+  zoom: 0.25
+local:
+  ca_cert: ''
+  host: 192.168.1.4
+  keepalive: 60
+  password: diabolize_cran_epic
+  port: 1883
+  use_ssl: null
+  username: domosquitto
+public:
+  ca_cert: ca.crt
+  host: domo.miraceti.net
+  keepalive: 60
+  password: albiness_harangues_polypites_cathectic
+  port: 8883
+  use_ssl: true
+  username: miraceti
+vpn:
+  ca_cert: null
+  clean_session: true
+  host: 10.8.0.1
+  keepalive: 60
+  password: albiness_harangues_polypites_cathectic
+  port: 1883
+  reconnect_timeout: 5
+  use_ssl: null
+  username: miraceti

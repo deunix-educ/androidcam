@@ -1,0 +1,89 @@
+
+<MenuButton@Button>
+    size_hint: None, None
+    size: dp(40), dp(40)
+    border: 0, 0, 0, 0
+
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: 1, 0.075
+        AnchorLayout:
+            anchor_x: "left"
+            anchor_y: "top"
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: None, None
+                size: self.minimum_size
+                #ToggleButton:
+                #    id: bt_idx
+                #    size_hint: None, None
+                #    size: dp(40), dp(40)
+                #    border: 1,1,1,1
+                #    background_normal: 'img/camera_rear_b.png'
+                #    background_down: 'img/camera_front_b.png'
+                #    on_release: root.ids.camera.change_camera_index(self)
+                MenuButton:
+                    id: bt_rot
+                    background_normal: 'img/rotate.png'
+                    on_release: root.ids.camera.rotate(self)
+                #MenuButton:
+                #    id: bt_mqtt
+                #    background_normal: 'img/network_b.png'
+                #    on_release: root.ids.camera.change_mqtt_network(self)
+                ToggleButton:
+                    id: bt_rec
+                    size_hint: None, None
+                    size: dp(40), dp(40)
+                    border: 1,1,1,1              
+                    background_normal: 'img/pause.png'
+                    background_down: 'img/play.png'
+                    on_release: root.ids.camera.send_video(self)    
+        AnchorLayout:
+            anchor_x: "center"
+            anchor_y: "top"
+            Label:
+                font_size: dp(16)
+                text_size: self.size
+                valign: 'middle'
+                halign: 'center'
+                text: app.title              
+        AnchorLayout:
+            anchor_x: "right"
+            anchor_y: "top"
+            MenuButton:
+                background_normal: 'img/quit.png'
+                on_release: root.ids.camera.app_quit(self)
+    BoxLayout:
+        orientation: 'horizontal'
+        Vigicam:
+            size_hint: 1, 0.85
+            index: self.cam_index
+            id: camera
+            allow_stretch: True
+            play: self.playing
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: self.cam_rotate
+                    origin: self.center
+                Scale:
+                    x: self.cam_ratio
+                    y: self.cam_ratio
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+
+
+    BoxLayout:
+        size_hint: 1, 0.15
+        AnchorLayout:
+            anchor_x: "right"
+            anchor_y: "bottom"
+            Label:
+                id: status
+                font_size: dp(16)
+                text_size: self.size
+                halign: 'right'
+                text: app.statusbar
+
