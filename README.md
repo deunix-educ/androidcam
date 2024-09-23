@@ -1,10 +1,10 @@
 # androidcam
-Mobile Application for django-automation
+Camera mobile for django-automation
 
 
 ### Installation and compilation
 
-- Accédez au dossier androidcam
+- Go to androidcam folder
 - Copy and paste the following command in a terminal
 
         root user
@@ -20,7 +20,7 @@ Mobile Application for django-automation
         buildozer -v android debug
         buildozer android deploy run logcat | grep python
             
-- Fichier de configuration dans /storage/emulated/0/Android/data/vigicam-settings.yaml
+- File configuration in /storage/emulated/0/Android/data/vigicam-settings.yaml
 
 
             
