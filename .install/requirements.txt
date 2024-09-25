@@ -1,0 +1,10 @@
+#
+kivy[full]
+plyer
+Cython
+buildozer
+pyjnius
+Pillow
+opencv-python
+paho-mqtt
+pyyaml
